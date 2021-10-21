@@ -5,7 +5,6 @@ module "eks" {
   subnets         = module.vpc.private_subnets
 
   tags = {
-    Environment = "Demo"
     GithubRepo  = "terraform-aws-eks"
     GithubOrg   = "terraform-aws-modules"
   }
