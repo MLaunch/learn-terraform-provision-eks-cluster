@@ -5,12 +5,6 @@ variable "region" {
 
 provider "aws" {
   region = var.region
-  default_tags {
-    tags = {
-      Environment = "Production"
-      Owner       = "Cloud"
-    }
-  }
 }
 
 data "aws_availability_zones" "available" {}
