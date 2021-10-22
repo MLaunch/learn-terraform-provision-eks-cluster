@@ -7,6 +7,8 @@ module "eks" {
   tags = {
     GithubRepo  = "terraform-aws-eks"
     GithubOrg   = "terraform-aws-modules"
+    "team" = var.team
+    "project" = var.project
   }
 
   vpc_id = module.vpc.vpc_id
