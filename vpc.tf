@@ -4,12 +4,12 @@ variable "region" {
 }
 
 variable "team" {
-  default     = "CloudGrowth"
+  default     = "cloudgrowth"
   description = "Cloud Growth Team"
 }
 
 variable "project" {
-  default     = "HMC"
+  default     = "hmc"
   description = "Hybrid Multi Cloud"
 }
 
