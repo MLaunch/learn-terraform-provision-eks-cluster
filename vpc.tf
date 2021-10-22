@@ -3,6 +3,17 @@ variable "region" {
   description = "AWS region"
 }
 
+variable "team" {
+  default     = "CloudGrowth"
+  description = "Cloud Growth Team"
+}
+
+variable "project" {
+  default     = "HMC"
+  description = "Hybrid Multi Cloud"
+}
+
+
 provider "aws" {
   region = var.region
 }
@@ -33,15 +44,21 @@ module "vpc" {
 
   tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "team" = var.team
+    "project" = var.project
   }
 
   public_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
+    "team" = var.team
+    "project" = var.project
   }
 
   private_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
+    "team" = var.team
+    "project" = var.project
   }
 }
